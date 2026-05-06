@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Коммерческая недвижимость — аренда и продажа помещений</title>
+  <meta name="description"
+    content="Коммерческая недвижимость: аренда и продажа торговых, офисных и складских помещений. Выгодные условия, удобная локация.">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">ESTATE<span>PRO</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">Главная</a>
+        <div class="nav-item-dropdown">
+          <a href="#catalog" class="dropdown-trigger">Объекты <svg class="dropdown-icon" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2.5">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="dropdown-menu">
+            <a href="#obj-phuket">Вилла в Тайланде</a>
+            <a href="#obj-varshavka">Помещение под автотематику</a>
+            <a href="#obj-belorusskaya">Апартаменты в центре Москвы</a>
+            <a href="#obj-starokachalovskaya">Помещение под любой вид деятельности</a>
+          </div>
+        </div>
+        <a href="#cta">Оставить заявку</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contacts">Контакты</a>
+        <a href="tel:+79639945878" class="nav-phone">+7 (963) 994-58-78</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-overlay"></div>
+    <div class="container">
+      <div class="hero-main reveal">
+        <div class="hero-photo-col">
+          <div class="hero-property-grid">
+            <a href="#obj-phuket" class="hero-prop-card"
+              style="background-image: url('C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1775739236844.jpg');">
+              <div class="hero-prop-price-group">
+                <span class="hero-prop-price-tag">Аренда: 80 тыс. ฿/мес</span>
+                <span class="hero-prop-price-tag">Продажа: 13 млн ฿</span>
+              </div>
+              <div class="hero-prop-card-overlay"></div>
+              <div class="hero-prop-card-content">
+                <span class="hero-prop-label">ВИЛЛА В ТАЙЛАНДЕ</span>
+                <span class="hero-prop-address">Supalai Primo Chalong, F83 house f93, 83000</span>
+              </div>
+            </a>
+            <a href="#obj-varshavka" class="hero-prop-card"
+              style="background-image: url('C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1775739389012.jpg');">
+              <div class="hero-prop-price-group">
+                <span class="hero-prop-price-tag">Аренда: 240 тыс. ₽/мес</span>
+                <span class="hero-prop-price-tag">Продажа: 25 млн ₽</span>
+              </div>
+              <div class="hero-prop-card-overlay"></div>
+              <div class="hero-prop-card-content">
+                <span class="hero-prop-label">ПОМЕЩЕНИЕ ПОД АВТОТЕМАТИКУ</span>
+                <span class="hero-prop-address">Варшавское шоссе 204, Москва</span>
+              </div>
+            </a>
+            <a href="#obj-belorusskaya" class="hero-prop-card"
+              style="background-image: url('C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079527629.jpg');">
+              <div class="hero-prop-price-group">
+                <span class="hero-prop-price-tag">Аренда: 55 тыс. ₽/мес</span>
+                <span class="hero-prop-price-tag">Продажа: 8 млн ₽</span>
+              </div>
+              <div class="hero-prop-card-overlay"></div>
+              <div class="hero-prop-card-content">
+                <span class="hero-prop-label">АПАРТАМЕНТЫ В ЦЕНТРЕ МОСКВЫ</span>
+                <span class="hero-prop-address">Электрический переулок 3/10<br>стр 1, Москва</span>
+              </div>
+            </a>
+            <a href="#obj-starokachalovskaya" class="hero-prop-card"
+              style="background-image: url('C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417483.jpg');">
+              <div class="hero-prop-price-group">
+                <span class="hero-prop-price-tag">Аренда 75 м²: 170 т.р.</span>
+                <span class="hero-prop-price-tag">Аренда 150 м²: 350 т.р.</span>
+              </div>
+              <div class="hero-prop-card-overlay"></div>
+              <div class="hero-prop-card-content">
+                <span class="hero-prop-label">ПОМЕЩЕНИЕ ПОД ЛЮБОЙ ВИД ДЕЯТЕЛЬНОСТИ</span>
+                <span class="hero-prop-address">ул. Старокачаловская 1А, Москва</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="hero-text-col">
+          <div class="hero-badge">Недвижимость от собственника</div>
+          <h1 class="hero-title">КОММЕРЧЕСКИЕ ПОМЕЩЕНИЯ В АРЕНДУ И НА ПРОДАЖУ <br> <span class="highlight">БЕЗ
+              ПОСРЕДНИКОВ ОТ СОБСТВЕННИКА</span></h1>
+          <div class="hero-description-block">
+            <p>Коммерческая недвижимость от собственника — без лишних посредников, скрытых комиссий и затянутых
+              согласований. Понятные условия, честная информация по объектам и быстрый выход на сделку.</p>
+          </div>
+          <div class="hero-actions reveal">
+            <a href="#catalog" class="btn btn-primary">Смотреть объекты</a>
+            <a href="tel:+79639945878" class="btn btn-outline-white">Связаться с собственником</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. CATALOG — Property Showcase -->
+  <section class="showcase-intro section-light" id="catalog">
+    <div class="container">
+      <div class="showcase-intro-header reveal">
+        <h2 class="section-title">Актуальные объекты недвижимости</h2>
+      </div>
+      <nav class="showcase-nav reveal">
+        <a href="#obj-phuket" class="showcase-nav-link">Вилла в Тайланде</a>
+        <a href="#obj-varshavka" class="showcase-nav-link">Помещение под автотематику</a>
+        <a href="#obj-belorusskaya" class="showcase-nav-link">Апартаменты в центре Москвы</a>
+        <a href="#obj-starokachalovskaya" class="showcase-nav-link">Помещение под любой вид деятельности</a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 2. CATALOG: Full Property Sections -->
+  <!-- 1. Объект: Вилла на Пхукете -->
+  <section class="prop-showcase prop-showcase--dark" id="obj-phuket">
+    <div class="container">
+      <div class="prop-showcase__inner reveal">
+        <div class="prop-showcase__visual">
+          <div class="prop-gallery" id="gallery-phuket">
+            <div class="prop-gallery__slides">
+              <div class="prop-gallery__slide active">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775731953057.jpg"
+                  alt="Гостиная с видом на бассейн">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775731953071.jpg"
+                  alt="Современная кухня">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775731953086.jpg"
+                  alt="Терраса и бассейн">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775731953098.jpg"
+                  alt="Мастер-спальня">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775731953120.jpg"
+                  alt="Просторная гостиная-столовая">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775732001942.jpg"
+                  alt="Уютная спальня">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775732002013.jpg"
+                  alt="Гостевая комната">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775732002026.jpg"
+                  alt="Зона барбекю">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775732002037.jpg"
+                  alt="Бассейн - вид сверху">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739236844.jpg"
+                  alt="Фасад виллы">
+              </div>
+              <div class="prop-gallery__slide">
+                <video src="c:\Users\Администратор\Desktop\Недвижка\video_2026-04-02_15-54-28.mp4" muted></video>
+                <div class="video-play-btn"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></div>
+              </div>
+            </div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--prev"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--next"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></div>
+            <div class="prop-gallery__counter">1 / 11</div>
+            <div class="prop-gallery__dots"></div>
+          </div>
+          <div class="prop-showcase__map-wrapper reveal">
+            <div class="prop-showcase__map" id="map-phuket">
+              <!-- Leaflet Map will be initialized here -->
+            </div>
+          </div>
+          <div class="prop-showcase__badges"><span class="badge-rent">Аренда</span><span
+              class="badge-sale">Продажа</span></div>
+        </div>
+        <div class="prop-showcase__info">
+          <div class="prop-showcase__type">Вилла · Таиланд</div>
+          <h3 class="prop-showcase__title">Вилла на Пхукете, Таиланд</h3>
+          <p class="prop-showcase__address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>Supalai Primo Chalong, F83 house f93, 83000</p>
+          <div class="prop-showcase__specs">
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              </svg><span>3 спальни</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.25c-.32.17-.71.17-1.03 0L3.53 17.38c-.32-.17-.53-.5-.53-.88V12h18v4.5zM3 7.5c0-.38.21-.71.53-.88l7.97-4.25c.32-.17.71-.17 1.03 0l7.97 4.25c.32.17.53.5.53.88V12H3V7.5z" />
+              </svg><span>Бассейн</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg><span>Охраняемый посёлок</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z" />
+                <path d="M18 13l-1.5-1.5" />
+                <path d="M14 17l-1.5-1.5" />
+                <path d="M2 22l5-5" />
+                <path d="M9.5 14.5L16 8" />
+                <path d="M6 18l1.5 1.5" />
+                <path d="M11 13l1.5 1.5" />
+                <circle cx="17" cy="7" r="5" />
+              </svg><span>Дизайнерский ремонт</span></div>
+          </div>
+          <ul class="prop-showcase__advantages">
+            <li>15 мин до пляжа Ката, 7 мин до ближайшего пляжа</li>
+            <li>Пирс Чалонг 7 мин — экскурсии на острова</li>
+            <li>Вся инфраструктура в 5–15 мин</li>
+          </ul>
+          <p class="prop-showcase__desc">Новая вилла в охраняемом посёлке с полным оснащением: бытовая техника
+            премиум-класса, кофемашина, уличный гриль. Приватность без пробок — все достопримечательности рядом.</p>
+          <div class="prop-showcase__price-group">
+            <div class="prop-showcase__prices">
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Продажа</span><span
+                  class="prop-showcase__price-value">13 млн бат</span></div>
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Аренда</span><span
+                  class="prop-showcase__price-value">80 тыс. бат/мес</span></div>
+            </div>
+            <div class="prop-showcase__actions">
+              <a href="tel:+79639945878" class="btn btn-primary btn-full">Записаться на просмотр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 2. Объект: Автосервис на Варшавке -->
+  <section class="prop-showcase prop-showcase--light prop-showcase--reversed" id="obj-varshavka">
+    <div class="container">
+      <div class="prop-showcase__inner reveal">
+        <div class="prop-showcase__visual">
+          <div class="prop-gallery" id="gallery-varshavka">
+            <div class="prop-gallery__slides">
+              <div class="prop-gallery__slide active">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739389012.jpg"
+                  alt="Фасад автосервиса">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739375582.jpg"
+                  alt="Интерьер цеха с подъемниками">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739385247.jpg"
+                  alt="План помещения">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739395482.jpg"
+                  alt="Въезд в автосервис">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739419887.jpg"
+                  alt="Вид на фасад с торца">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739424200.jpg"
+                  alt="Вид на фасад ночью">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739428420.jpg"
+                  alt="Зона шиномонтажа">
+              </div>
+              <div class="prop-gallery__slide">
+                <img
+                  src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775739432189.jpg"
+                  alt="Общий вид здания">
+              </div>
+            </div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--prev"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--next"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></div>
+            <div class="prop-gallery__counter">1 / 8</div>
+            <div class="prop-gallery__dots"></div>
+          </div>
+          <div class="prop-showcase__map-wrapper reveal">
+            <div class="prop-showcase__map" id="map-varshavka">
+              <!-- Leaflet Map will be initialized here -->
+            </div>
+          </div>
+          <div class="prop-showcase__badges"><span class="badge-rent">Аренда</span><span
+              class="badge-sale">Продажа</span></div>
+        </div>
+        <div class="prop-showcase__info">
+          <div class="prop-showcase__type">Помещение под автотематику</div>
+          <h3 class="prop-showcase__title">АВТОСЕРВИС НА ТРИ ПОСТА НА ПЕРВОЙ ЛИНИИ</h3>
+          <p class="prop-showcase__address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>Варшавское шоссе 204, Москва</p>
+          <div class="prop-showcase__specs">
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <path d="M7 7h10M7 12h10M7 17h10" />
+              </svg><span>70 м²</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+              </svg><span>25 кВт</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a2 2 0 0 1-2.83-2.83l-3.94 3.6z" />
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.58 3.1h15.2a2 2 0 0 0 1.58-3.1L11.71 3.86a1 1 0 0 0-1.42 0z" />
+              </svg><span>3 смотровые ямы</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 3h18v11H3z" />
+                <path d="M4 14v4M12 14v4M20 14v4M3 21h18" />
+              </svg><span>Реклама с шоссе</span></div>
+          </div>
+          <ul class="prop-showcase__advantages">
+            <li>Полностью оборудованный автосервис: подъёмники, инструмент, зона ожидания</li>
+            <li>Прямые договоры с поставщиками и наработанная клиентская база</li>
+            <li>Удобный заезд с Варшавского шоссе, парковка на 10 машиномест</li>
+          </ul>
+          <p class="prop-showcase__desc">Готовый арендный бизнес или площадка под развитие. Просторное помещение со
+            всеми коммуникациями, специализированным оборудованием и вентиляцией.</p>
+          <div class="prop-showcase__price-group">
+            <div class="prop-showcase__prices">
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Продажа</span><span
+                  class="prop-showcase__price-value">25 млн ₽</span></div>
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Аренда</span><span
+                  class="prop-showcase__price-value">240 тыс. ₽/мес</span></div>
+            </div>
+            <div class="prop-showcase__actions">
+              <a href="tel:+79639945878" class="btn btn-primary btn-full">Записаться на просмотр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. Объект: Апартаменты у Белорусской -->
+  <section class="prop-showcase prop-showcase--dark" id="obj-belorusskaya">
+    <div class="container">
+      <div class="prop-showcase__inner reveal">
+        <div class="prop-showcase__visual">
+          <div class="prop-gallery" id="gallery-belorusskaya">
+            <div class="prop-gallery__slides">
+              <div class="prop-gallery__slide active"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079527658.jpg"
+                  alt="Рабочая зона"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079527629.jpg"
+                  alt="Спальное место"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079527682.jpg"
+                  alt="Зона отдыха"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079557638.jpg"
+                  alt="Кухня и спальня"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079557660.jpg"
+                  alt="Обеденная зона"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079557668.jpg"
+                  alt="Прихожая и зеркало"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079557691.jpg"
+                  alt="Декор стен"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079557717.jpg"
+                  alt="Освещение"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079573580.jpg"
+                  alt="Ванная комната"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079573983.jpg"
+                  alt="Душевая"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079573994.jpg"
+                  alt="Санузел"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079602379.jpg"
+                  alt="Санузел детально"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079574004.jpg"
+                  alt="Окно и цветы"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079590551.jpg"
+                  alt="Вид из окна"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079590571.jpg"
+                  alt="Завтрак на столе"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079590580.jpg"
+                  alt="Входная зона"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079590591.jpg"
+                  alt="Стол у стены"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079590611.jpg"
+                  alt="Кухня общий вид"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079602369.jpg"
+                  alt="Полотенца"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079602388.jpg"
+                  alt="Экстерьер здания"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776079602419.jpg"
+                  alt="Вид на фасад"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/84824e13-ba19-4642-ad24-c5fa685d8c79/media__1776090543630.png"
+                  alt="Планировка"></div>
+            </div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--prev"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--next"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></div>
+            <div class="prop-gallery__counter">1 / 22</div>
+            <div class="prop-gallery__dots"></div>
+          </div>
+          <div class="prop-showcase__map-wrapper">
+            <div class="prop-showcase__map" id="map-belorusskaya"></div>
+          </div>
+          <div class="prop-showcase__badges">
+            <span class="badge-rent">Аренда</span>
+            <span class="badge-sale">Продажа</span>
+          </div>
+        </div>
+        <div class="prop-showcase__info">
+          <div class="prop-showcase__type">Апартаменты · Центр Москвы</div>
+          <h3 class="prop-showcase__title">АПАРТАМЕНТЫ В ЦЕНТРЕ МОСКВЫ</h3>
+          <p class="prop-showcase__address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>Электрический переулок 3/10 стр 1, Москва</p>
+          <div class="prop-showcase__specs">
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
+              </svg><span>11 м²</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg><span>Лофт-дизайн</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg><span>7 мин до метро</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M12 21a9 9 0 100-18 9 9 0 000 18z" />
+                <path d="M12 7v5l3 2" />
+              </svg><span>Центр Москвы</span></div>
+          </div>
+          <ul class="prop-showcase__advantages">
+            <li>Дизайнерский ремонт в стиле «современный лофт»</li>
+            <li>Мебель и техника включены в стоимость</li>
+          </ul>
+          <p class="prop-showcase__desc">Компактные и стильные апартаменты в самом центре деловой активности.</p>
+          <div class="prop-showcase__price-group">
+            <div class="prop-showcase__prices">
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Продажа</span><span
+                  class="prop-showcase__price-value">8 млн ₽</span></div>
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Аренда</span><span
+                  class="prop-showcase__price-value">55 тыс. ₽/мес</span></div>
+            </div>
+            <div class="prop-showcase__actions">
+              <a href="tel:+79639945878" class="btn btn-primary">Записаться на просмотр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Объект: Старокачаловская -->
+  <section class="prop-showcase prop-showcase--light prop-showcase--reversed" id="obj-starokachalovskaya">
+    <div class="container">
+      <div class="prop-showcase__inner reveal">
+        <div class="prop-showcase__visual">
+          <div class="prop-gallery" id="gallery-starokachalovskaya">
+            <div class="prop-gallery__slides">
+              <div class="prop-gallery__slide active"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417483.jpg"
+                  alt="Интерьер 6"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417534.jpg"
+                  alt="Интерьер основного зала"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082405783.jpg"
+                  alt="Вход"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082405794.jpg"
+                  alt="Интерьер 1"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082405806.jpg"
+                  alt="Интерьер 2"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082405838.jpg"
+                  alt="Интерьер 3"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082405849.jpg"
+                  alt="Интерьер 4"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417467.jpg"
+                  alt="Интерьер 5"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417490.jpg"
+                  alt="Интерьер 7"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082417525.jpg"
+                  alt="Интерьер 8"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082428859.jpg"
+                  alt="Интерьер 10"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082428878.jpg"
+                  alt="Интерьер 11"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082428891.jpg"
+                  alt="Интерьер 12"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082428922.jpg"
+                  alt="Интерьер 13"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082428928.jpg"
+                  alt="Интерьер 14"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082440506.jpg"
+                  alt="Интерьер 15"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082440518.jpg"
+                  alt="Интерьер 16"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082440530.jpg"
+                  alt="Интерьер 17"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082440562.jpg"
+                  alt="Интерьер 18"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082440574.jpg"
+                  alt="Интерьер 19"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/03e1d0cd-415d-406e-b200-2ecec16769e5/media__1776082450691.jpg"
+                  alt="Интерьер 20"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/84824e13-ba19-4642-ad24-c5fa685d8c79/media__1776161400861.jpg"
+                  alt="Санузел 1"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/84824e13-ba19-4642-ad24-c5fa685d8c79/media__1776161400881.jpg"
+                  alt="Санузел 2"></div>
+              <div class="prop-gallery__slide"><img
+                  src="C:/Users/Администратор/.gemini/antigravity/brain/84824e13-ba19-4642-ad24-c5fa685d8c79/media__1776161410192.jpg"
+                  alt="План помещения"></div>
+            </div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--prev"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6" />
+              </svg></div>
+            <div class="prop-gallery__arrow prop-gallery__arrow--next"><svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6" />
+              </svg></div>
+            <div class="prop-gallery__counter">1 / 24</div>
+            <div class="prop-gallery__dots"></div>
+          </div>
+          <div class="prop-showcase__map-wrapper reveal">
+            <div class="prop-showcase__map" id="map-starokachalovskaya"></div>
+          </div>
+          <div class="prop-showcase__badges"><span class="badge-rent">Аренда</span></div>
+        </div>
+        <div class="prop-showcase__info">
+          <div class="prop-showcase__type">Коммерция · Новый формат аренды</div>
+          <h3 class="prop-showcase__title">ПОМЕЩЕНИЕ ПОД ЛЮБОЙ ВИД ДЕЯТЕЛЬНОСТИ</h3>
+          <p class="prop-showcase__address"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>ул. Старокачаловская 1А, Москва</p>
+          <div class="prop-showcase__specs">
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="2" y="7" width="20" height="15" rx="2" ry="2" />
+                <polyline points="17 21 17 13 7 13 7 21" />
+                <path d="M17 7V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2" />
+              </svg><span>150 м²</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M3 10h18M7 15l2 2 4-4" />
+              </svg><span>Отдельный вход</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg><span>7 минут до метро</span></div>
+            <div class="prop-showcase__spec"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path
+                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg><span>Лицензия на алкоголь</span></div>
+          </div>
+          <ul class="prop-showcase__advantages">
+            <li>Сверхвысокий пешеходный трафик</li>
+            <li>Возможность рекламной вывески</li>
+          </ul>
+          <p class="prop-showcase__desc">Уникальное помещение на трафике метро.</p>
+          <div class="prop-showcase__price-group">
+            <div class="prop-showcase__prices">
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Аренда 75 м²</span><span
+                  class="prop-showcase__price-value">170 тыс. ₽/мес</span></div>
+              <div class="prop-showcase__price"><span class="prop-showcase__price-label">Аренда 150 м²</span><span
+                  class="prop-showcase__price-value">350 тыс. ₽/мес</span></div>
+            </div>
+            <div class="prop-showcase__actions">
+              <a href="tel:+79639945878" class="btn btn-primary btn-full">Записаться на просмотр</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- 9. CTA -->
+  <section class="cta-section section-light" id="cta">
+    <div class="container">
+      <div class="cta-wrapper reveal">
+        <h2 class="cta-title">Готовы обсудить объект?</h2>
+        <p class="cta-subtitle">Оставьте заявку — мы свяжемся с вами и подберём подходящий вариант для вашего бизнеса
+        </p>
+        <form class="cta-form" id="ctaForm" action="https://formsubmit.co/zhovanik.oleg@gmail.com" method="POST">
+          <div class="cta-form-fields">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="tel" name="phone" placeholder="Телефон" required>
+            <textarea name="message" placeholder="Что вас интересует? (аренда, покупка, просмотр…)"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Отправить заявку</button>
+        </form>
+        <div class="cta-messengers">
+          <a href="https://wa.me/799639945878" target="_blank" class="cta-messenger-link"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492l4.625-1.466A11.96 11.96 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75c-2.17 0-4.207-.678-5.878-1.834l-.422-.281-2.738.868.867-2.664-.303-.44A9.7 9.7 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12s-4.365 9.75-9.75 9.75z" />
+            </svg>WhatsApp</a>
+          <a href="https://t.me/M91c0" target="_blank" class="cta-messenger-link"><svg viewBox="0 0 24 24"
+              fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.22c-.2 2.09-1.05 7.17-1.49 9.51-.18.99-.54 1.32-.89 1.35-.76.07-1.33-.5-2.07-.98-1.15-.75-1.8-1.22-2.92-1.95-1.29-.85-.45-1.31.28-2.07.19-.2 3.56-3.27 3.63-3.54.01-.03.01-.15-.06-.21-.07-.06-.18-.04-.25-.02-.11.02-1.79 1.14-5.06 3.34-.48.33-.91.49-1.3.48-.43-.01-1.25-.24-1.86-.44-.75-.25-1.35-.38-1.3-.8.03-.22.32-.45.89-.68 3.49-1.52 5.82-2.52 6.99-3.01 3.33-1.39 4.03-1.63 4.48-1.64.1 0 .32.02.47.13.12.09.16.22.17.33.02.07.01.19 0 .21z" />
+            </svg>Telegram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FAQ (Premium Two-Level Layout) -->
+  <section class="faq section-white" id="faq">
+    <div class="container">
+      <div class="faq-layout">
+
+        <div class="faq-info">
+          <h2 class="section-title">Часто задаваемые вопросы</h2>
+        </div>
+
+        <div class="faq-container">
+          <!-- Level 1: Popular Questions -->
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-question">Можно ли посмотреть объект вживую?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Да, конечно. Организуем показ в удобное для вас время, чтобы вы могли
+                  оценить помещение, локацию, входную группу, трафик и общее состояние объекта.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Вы работаете напрямую от собственника?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Да. Вы общаетесь напрямую с владельцем объектов, без посредников и лишних
+                  комиссий. Это ускоряет процесс и делает условия максимально прозрачными.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Подойдет ли помещение под мой вид бизнеса?<span
+                  class="faq-question-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Мы поможем оценить потенциал объекта под ваш формат: торговля, офис,
+                  услуги,
+                  склад или инвестиции. Учитываем специфику локации и технические параметры.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Предоставляются ли арендные каникулы?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Да, мы готовы обсуждать предоставление арендных каникул на период
+                  проведения ремонтных работ или заезда. Условия обсуждаются индивидуально.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Как быстро можно выйти на сделку?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Обычно подготовка и подписание документов занимает от 3 до 7 рабочих дней,
+                  так как все базовые документы по объектам уже готовы к проверке.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Какие документы предоставляются по объекту?<span
+                  class="faq-question-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Предоставляем полный пакет: выписку из ЕГРН, техпаспорт, поэтажные планы,
+                  информацию о мощностях и все необходимые юридические подтверждения.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toggle Button -->
+          <div class="faq-toggle-wrapper">
+            <button class="btn btn-outline-gold" id="toggleFaq">Смотреть все вопросы</button>
+          </div>
+
+          <!-- Level 2: Remaining Questions (Initially Hidden) -->
+          <div class="faq-list extra-faq" id="extraFaq">
+            <div class="faq-item">
+              <button class="faq-question">Можно ли сделать перепланировку под себя?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Да, в большинстве помещений конструктивные особенности позволяют вносить
+                  изменения. Любые перепланировки обсуждаются и фиксируются в договоре.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Есть ли комиссия при аренде или покупке?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Никаких скрытых комиссий. Сделка проходит напрямую с собственником, что
+                  экономит ваш бюджет и упрощает коммуникацию.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Предусмотрен ли обеспечительный платеж (залог)?<span
+                  class="faq-question-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">При аренде стандартно вносится депозит в размере одного месяца оплаты.
+                  Конкретные условия зависят от объекта и срока договора.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Кто сопровождает сделку на всех этапах?<span class="faq-question-icon"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Мы сопровождаем вас от первого звонка до передачи ключей. Помогаем с юр.
+                  вопросами и обеспечиваем чистоту процесса.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Как осуществляется управление виллой в Таиланде?<span
+                  class="faq-question-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Вилла находится в охраняемом комплексе с профессиональной управляющей
+                  компанией. Возможна передача в доверительное управление для получения пассивного дохода.</div>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-question">Включены ли коммунальные платежи в стоимость?<span
+                  class="faq-question-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg></span></button>
+              <div class="faq-answer">
+                <div class="faq-answer-inner">Обычно эксплуатационные расходы и коммунальные услуги по счетчикам
+                  оплачиваются арендатором отдельно. Детали прописываются в договоре.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="faq-footer-cta">
+            <p>Не нашли нужный ответ? Свяжитесь с нами — подробно расскажем по объекту и условиям</p>
+            <div class="faq-footer-btns">
+              <a href="tel:+799639945878" class="btn btn-primary">Позвонить собственнику</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACTS & MAP -->
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <h2 class="section-title">КОНТАКТЫ</h2>
+      <div class="contacts-grid reveal">
+        <div class="contacts-info">
+
+          <div class="contacts-header">
+            <div class="contacts-person">
+              <span class="person-label">Собственник</span>
+              <div class="person-name">
+                <span class="surname">ЖОВАНИК</span>
+                <span class="first-name">Олег Ростиславович</span>
+              </div>
+              <div class="contacts-messengers">
+                <a href="https://wa.me/799639945878" target="_blank" class="social-link whatsapp">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  </svg>
+                  WhatsApp
+                </a>
+                <a href="https://t.me/M91c0" target="_blank" class="social-link telegram">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.94 8.22c-.2 2.09-1.05 7.17-1.49 9.51-.18.99-.54 1.32-.89 1.35-.76.07-1.33-.5-2.07-.98-1.15-.75-1.80-1.22-2.92-1.95-1.29-.85-.45-1.31.28-2.07.19-.2 3.56-3.27 3.63-3.54.01-.03.01-.15-.06-.21-.07-.06-.18-.04-.25-.02-.11.02-1.79 1.14-5.06 3.34-.48.33-.91.49-1.3.48-.43-.01-1.25-.24-1.86-.44-.75-.25-1.35-.38-1.3-.8.03-.22.32-.45.89-.68 3.49-1.52 5.82-2.52 6.99-3.01 3.33-1.39 4.03-1.63 4.48-1.64.1 0 .32.02.47.13.12.09.16.22.17.33.02.07.01.19 0 .21z" />
+                  </svg>
+                  Telegram
+                </a>
+              </div>
+            </div>
+
+            <div class="contacts-reach">
+              <div class="reach-item">
+                <span class="reach-label">Телефон</span>
+                <a href="tel:+79639945878" class="reach-value">+7 (963) 994-58-78</a>
+              </div>
+              <div class="reach-item">
+                <span class="reach-label">Email</span>
+                <a href="mailto:zhovanik.oleg@gmail.com" class="reach-value">zhovanik.oleg@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contacts-locations">
+            <h4 class="location-title">Актуальные объекты недвижимости</h4>
+            <div class="contacts-objects-list">
+              <div class="object-entry">
+                <a href="#obj-phuket" class="obj-link">Вилла в Таиланде</a>
+                <span class="obj-address">Supalai Primo Chalong, F83 house f93, 83000</span>
+              </div>
+              <div class="object-entry">
+                <a href="#obj-varshavka" class="obj-link">Помещение под автотематику</a>
+                <span class="obj-address">Варшавское шоссе 204, Москва</span>
+              </div>
+              <div class="object-entry">
+                <a href="#obj-belorusskaya" class="obj-link">Апартаменты в центре Москвы</a>
+                <span class="obj-address">Электрический переулок 3/10 стр 1, Москва</span>
+              </div>
+              <div class="object-entry">
+                <a href="#obj-starokachalovskaya" class="obj-link">Помещение под любой вид деятельности</a>
+                <span class="obj-address">ул. Старокачаловская 1А, Москва</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contacts-photo-col">
+          <div class="owner-photo-container">
+            <div class="owner-photo-placeholder">
+              <img
+                src="C:\Users\Администратор\.gemini\antigravity\brain\03e1d0cd-415d-406e-b200-2ecec16769e5\media__1775663024472.jpg"
+                alt="Олег Ростиславович" class="owner-image">
+              <div class="photo-overlay"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2026 ESTATEPRO. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
